@@ -9,7 +9,8 @@
 - ViewBinding
 - Jetpack Navigation
 - Clean Architecture (MVVM)
-- MaterialSpinner by jaredrummler
+- MaterialSpinner by jaredrummler (https://github.com/jaredrummler/MaterialSpinner)
+- Api by https://currency.getgeoapi.com/
 
 ## Скриншоты
 ![image](https://github.com/user-attachments/assets/b3179bcf-4267-4fdf-8a9d-157f4dced72c)
