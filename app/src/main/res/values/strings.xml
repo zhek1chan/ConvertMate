@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ConvertMate</string>
+    <string name="hint_choose">Choose currency</string>
+    <string name="convert">Convert</string>
+    <string name="Mate">Mate</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="amount">Type amount of currency</string>
+    <string name="result">Result</string>
+    <string name="converted_amount">Converted Amount</string>
+    <string name="something_went_wrong_try_again_later">Something went wrong, try again later</string>
+    <string name="you_have_typed_the_wrong_amount">You have typed the wrong amount</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="change_values">change values</string>
+</resources>

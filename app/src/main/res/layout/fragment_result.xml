@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:id="@+id/convert_naming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/convert"
+        android:textColor="@color/green"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/mate_naming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Mate"
+        android:textColor="@color/green"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="@id/convert_naming"
+        app:layout_constraintTop_toBottomOf="@+id/convert_naming"
+        app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/result"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/result"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/result_to"
+            app:layout_constraintHorizontal_bias="0.896"
+            app:layout_constraintStart_toStartOf="@id/result_to"
+            app:layout_constraintTop_toBottomOf="@id/mate_naming" />
+
+
+    <EditText
+        android:id="@+id/result_from"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/edit_text_input_with_border_2"
+        android:clickable="false"
+        android:enabled="false"
+        android:hint="@string/converted_amount"
+        android:importantForAutofill="no"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="LabelFor" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:background="@drawable/outline_arrow_right_alt_24"
+        android:rotation="90"
+        app:backgroundTint="@color/green"
+        app:layout_constraintBottom_toTopOf="@id/result_to"
+        app:layout_constraintEnd_toEndOf="@id/result_from"
+        app:layout_constraintStart_toStartOf="@id/result_from"
+        app:layout_constraintTop_toBottomOf="@id/result_from" />
+
+
+    <EditText
+        android:id="@+id/result_to"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/edit_text_input_with_border_2"
+        android:clickable="false"
+        android:enabled="false"
+        android:hint="@string/converted_amount"
+        android:importantForAutofill="no"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_from"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="LabelFor" />
+
+
+    <Button
+        android:id="@+id/btnNavBack"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/btn_main_round"
+        android:text="@string/change_values"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/blue"
+        app:layout_constraintEnd_toEndOf="@id/result_to"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/result_to"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.123" />
+</androidx.constraintlayout.widget.ConstraintLayout>
