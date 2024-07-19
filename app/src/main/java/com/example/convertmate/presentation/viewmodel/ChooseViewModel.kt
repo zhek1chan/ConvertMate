@@ -4,10 +4,11 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.convertmate.domain.Resource
 import com.example.convertmate.data.network.dto.ConvertDto
 import com.example.convertmate.data.network.dto.CurrencyDto
+import com.example.convertmate.domain.Resource
 import com.example.convertmate.domain.repository.MainRepo
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ChooseViewModel(private val rep: MainRepo) : ViewModel()  {
@@ -20,7 +21,7 @@ class ChooseViewModel(private val rep: MainRepo) : ViewModel()  {
     val currencies = MutableLiveData<Collection<String>?>()
 
     fun getConvertedData(accessKey: String, from: String, to: String, amount: Double) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Main) {
             rep.getConvertedData(accessKey, from, to, amount).collect {
                 convertedData.value = it
             }
@@ -42,5 +43,6 @@ class ChooseViewModel(private val rep: MainRepo) : ViewModel()  {
 
     fun clearConvertedRate() {
         convertedRate.value = null
+        convertedData.value = Resource(Resource.Status.LOADING, null, null)
     }
 }

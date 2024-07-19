@@ -16,6 +16,8 @@ import com.example.convertmate.data.network.dto.Rates
 import com.example.convertmate.databinding.FragmentChooseBinding
 import com.example.convertmate.presentation.viewmodel.ChooseViewModel
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.delay
+import okhttp3.internal.wait
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ChooseFragment : Fragment() {
@@ -56,7 +58,6 @@ class ChooseFragment : Fragment() {
             selectedItem1 = item.toString()
             binding.firstCurrency.text = selectedItem1
         }
-
         val spinner2 = binding.spnSecond
         spinner2.setItems(currencies)
         spinner2.setOnClickListener {
@@ -158,8 +159,10 @@ class ChooseFragment : Fragment() {
                     if (result.data?.status == "success") {
                         val map: Map<String, Rates>
                         map = result.data.rates
+                        Log.d("HUITA", "$map")
                         map.keys.forEach {
-                            val rateForAmount = map[it]?.rate_for_amount
+                            val rateForAmount = map[it]!!.rate_for_amount
+                            Log.d("HUITA dva", "$rateForAmount")
                             viewModel.convertedRate.value = rateForAmount
                         }
                         val formattedString =
@@ -169,6 +172,8 @@ class ChooseFragment : Fragment() {
                         val bundle = Bundle()
                         bundle.putString("from", selectedItem1.toString())
                         bundle.putString("to", selectedItem2.toString())
+                        Log.d("HUITA1", "$selectedItem1 $selectedItem2")
+                        Log.d("HUITA", "$formattedString")
                         bundle.putString("result", formattedString)
                         bundle.putString("num", binding.amount.text.toString())
                         findNavController().navigate(R.id.resultFragment, bundle)
